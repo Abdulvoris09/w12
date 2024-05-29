@@ -2,14 +2,15 @@
 <html>
 <head>
     <title>Maktablar</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1>Maktablar Ro'yxati</h1>
-    <ul>
+    <h1 class="main-title">Maktablar Ro'yxati</h1>
+    <ul class="school-list">
         {% for maktab in maktablar %}
-            <li><a href="{% url 'maktab_detail' maktab.pk %}">{{ maktab.nomi }}</a></li>
+            <li class="school-item"><a href="{% url 'maktab_detail' maktab.pk %}" class="school-link">{{ maktab.nomi }}</a></li>
         {% endfor %}
     </ul>
-    <a href="{% url 'maktab_create' %}">Yangi Maktab Qo'shish</a>
+    <a href="{% url 'maktab_create' %}" class="add-school-button">Yangi Maktab Qo'shish</a>
 </body>
 </html>
